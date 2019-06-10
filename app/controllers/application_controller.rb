@@ -9,7 +9,7 @@ class App < Sinatra::Base
   end 
   
   post '/teams' do 
-    members = Members.create(hero: params[:members][:name], power: params[:members][:power], bio: params[:members][:bio]).each do |hero_data|
+    @members = Members.create(hero: params[:members][:name], power: params[:members][:power], bio: params[:members][:bio]).each do |hero_data|
         hero = Members.new(hero_data)
         hero.team = hero
         hero.save
