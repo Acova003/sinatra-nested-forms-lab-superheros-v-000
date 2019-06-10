@@ -10,7 +10,7 @@ class App < Sinatra::Base
   
   post '/teams' do 
     
-    @team_name = params[team[name]]
+    @team_name = params["team"]["name"]
     erb :'../views/team'
   end 
 end
